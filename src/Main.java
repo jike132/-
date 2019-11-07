@@ -43,33 +43,3 @@ import java.util.Scanner;
 //        return n;
 //    }
 //}
-public class Main{
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int N=sc.nextInt();
-        int s= (int) Math.sqrt(N);
-        String d=sc.next();
-        int r=N-(int)Math.pow(s,2)-1;
-        int n=1+2*(s/2);
-   print(n,d,"");
-        System.out.println(r);
-    }
-    public static void print(int s,String d,String f){
-            for(int j=0;j<s;j++){
-                System.out.print(d+" ");
-            }
-            System.out.println();
-        String g=f+"  ";
-        System.out.print(g);
-        if(s-1==0) {
-            for(int j=0;j<s;j++){
-                System.out.print(d+" ");
-            }
-            System.out.println();
-        }else {
-            print(s-2,d,g);
-
-        }
-
-    }
-}
