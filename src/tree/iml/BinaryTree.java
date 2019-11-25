@@ -3,9 +3,20 @@ package tree.iml;
 import tree.TreeNode;
 
 public class BinaryTree implements tree.interf.BinaryTree {
+
+    private TreeNode root;
+
+ public    BinaryTree(){
+        super();
+    }
+  public   BinaryTree(TreeNode root){
+        super();
+        this.root=root;
+
+    }
     @Override
     public boolean isEmpty() {
-        return false;
+        return root==null;
     }
 
     @Override
@@ -25,6 +36,15 @@ public class BinaryTree implements tree.interf.BinaryTree {
 
     @Override
     public void preOrderTraverse() {
+        if(root!=null){
+            System.out.print(root.val+" ");
+            //遍历左子树
+            BinaryTree binaryTree=new BinaryTree(root.left);
+            binaryTree.preOrderTraverse();
+            //遍历右子树
+            BinaryTree rbinaryTree=new BinaryTree(root.right);
+            rbinaryTree.preOrderTraverse();
+        }
 
     }
 
