@@ -22,6 +22,21 @@ public  class Tree {
 
           return   head;
     }
+    public TreeNode insertAnyTreeNode(TreeNode head,int d){
+        if(head==null) {
+            head=new TreeNode(d);
+            return head;
+        }
+
+        if(head.left==null){
+            head.left=insertAnyTreeNode(head.left,d);
+        }
+        else if (head.right==null){
+            head.right=insertAnyTreeNode(head.right,d);
+        }
+
+        return   head;
+    }
     public void print(TreeNode h){
        if(h!=null){
             System.out.println(h.val);
