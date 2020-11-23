@@ -35,7 +35,7 @@ public class BinaryTree implements tree.interf.BinaryTree {
     }
 
     @Override
-    public void preOrderTraverse() {
+    public void preOrderTraverse() {//先序遍历
         if(root!=null){
             System.out.print(root.val+" ");
             //遍历左子树
@@ -49,13 +49,30 @@ public class BinaryTree implements tree.interf.BinaryTree {
     }
 
     @Override
-    public void inOrderTraverse() {
+    public void inOrderTraverse() {//中序遍历
+        if(root!=null){
 
+            //遍历左子树
+            BinaryTree binaryTree=new BinaryTree(root.left);
+            binaryTree.inOrderTraverse();
+            System.out.print(root.val+" ");
+            //遍历右子树
+            BinaryTree rbinaryTree=new BinaryTree(root.right);
+            rbinaryTree.inOrderTraverse();
+        }
     }
 
     @Override
-    public void postOrderTraverse() {
-
+    public void postOrderTraverse() {//后序遍历
+        if(root!=null){
+            //遍历左子树
+            BinaryTree binaryTree=new BinaryTree(root.left);
+            binaryTree.postOrderTraverse();
+            //遍历右子树
+            BinaryTree rbinaryTree=new BinaryTree(root.right);
+            rbinaryTree.postOrderTraverse();
+            System.out.print(root.val+" ");
+        }
     }
 
     @Override
